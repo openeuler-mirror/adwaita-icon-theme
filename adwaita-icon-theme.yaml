@@ -1,0 +1,4 @@
+version_control: gitlab.gnome
+src_repo: adwaita-icon-theme
+tag_prefix: GNOME_ICON_THEME_
+seperator: "_"
