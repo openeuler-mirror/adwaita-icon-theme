@@ -1,10 +1,10 @@
 Name:           adwaita-icon-theme
-Version:        3.32.0
+Version:        3.37.2
 Release:	1
 Summary:        Adwaita icon theme
 License:        LGPLv3+ or CC-BY-SA
 URL:            https://gitlab.gnome.org/GNOME/adwaita-icon-theme
-Source0:	https://download.gnome.org/sources/adwaita-icon-theme/3.32/%{name}-%{version}.tar.xz
+Source0:	https://download.gnome.org/sources/adwaita-icon-theme/3.37/%{name}-%{version}.tar.xz
 
 BuildArch:      noarch
 
@@ -55,5 +55,8 @@ gtk-update-icon-cache --force %{_datadir}/icons/Adwaita &>/dev/null || :
 %{_datadir}/pkgconfig/adwaita-icon-theme.pc
 
 %changelog
+* Mon Jul 20 2020 wangye <wangye70@huawei.com> - 3.37.2-1
+- Version update
+
 * Mon Sep 02 2019 openEuler Buildteam <buildteam@openeuler.org> - 3.32.0-1
 - Package init
