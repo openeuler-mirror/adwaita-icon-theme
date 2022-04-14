@@ -1,14 +1,14 @@
 Name:           adwaita-icon-theme
-Version:        41.0
+Version:        42.0
 Release:	1
 Summary:        Adwaita icon theme
 License:        LGPLv3+ or CC-BY-SA-3.0
-URL:            http://www.linuxfromscratch.org/blfs/view/svn/x/adwaita-icon-theme.html
-Source0:	https://download.gnome.org/sources/adwaita-icon-theme/41/%{name}-%{version}.tar.xz
+URL:            https://gitlab.gnome.org/GNOME/adwaita-icon-theme
+Source0:        https://download.gnome.org/sources/adwaita-icon-theme/42/%{name}-%{version}.tar.xz
 
 BuildArch:      noarch
 
-BuildRequires:  gtk3-devel intltool librsvg2
+BuildRequires:  gtk3-devel intltool librsvg2 make
 
 Requires:       adwaita-cursor-theme = %{version}-%{release}
 
@@ -18,7 +18,7 @@ of cursors which is user for the GNOME desktop are contained by adwaita-cursor-t
 
 %package -n     adwaita-cursor-theme
 Summary:        Adwaita cursor theme
- 
+
 %description -n adwaita-cursor-theme
 The adwaita-cursor-theme package contains a modern set of cursors originally
 designed for the GNOME desktop.
@@ -41,7 +41,7 @@ this package.
 %install
 %make_install
 
-touch %{buildroot}%{_datadir}/icons/Adwaita/icon-theme.cache
+touch $RPM_BUILD_ROOT%{_datadir}/icons/Adwaita/icon-theme.cache
 
 %transfiletriggerin -- %{_datadir}/icons/Adwaita
 gtk-update-icon-cache --force %{_datadir}/icons/Adwaita &>/dev/null || :
@@ -67,6 +67,9 @@ gtk-update-icon-cache --force %{_datadir}/icons/Adwaita &>/dev/null || :
 %{_datadir}/pkgconfig/adwaita-icon-theme.pc
 
 %changelog
+* Mon Mar 28 2022 lin zhang <lin.zhang@turbolinux.com.cn> - 42.0-1
+- Update to 42.0
+
 * Sat Dec 27 2021 wangkerong <wangkerong@huawei.com> - 41.0-1
 - update to 41.0
 - splite adwaita-cursor-theme subpackage
